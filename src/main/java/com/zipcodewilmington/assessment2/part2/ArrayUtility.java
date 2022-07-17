@@ -2,6 +2,10 @@ package com.zipcodewilmington.assessment2.part2;
 
 import com.j256.ormlite.stmt.query.In;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.IntStream;
 
 public class ArrayUtility {
@@ -17,14 +21,26 @@ public class ArrayUtility {
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-        return null;
+//        return null;
+        index = index % array.length;
+        List<Integer> arrayCopy = new ArrayList<>(Arrays.asList(array));
+        List<Integer> toRotate = new ArrayList<>(arrayCopy.subList(index, arrayCopy.size()));
+        toRotate.addAll(arrayCopy.subList(0, index));
+        return toRotate.toArray(new Integer[0]);
     }
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
-        return null;
+//        return null;
+        Integer[] array = merge(array1, array2);
+        Integer count = 0;
+        for (Integer i : array)
+            if (Objects.equals(i, valueToEvaluate))
+                count++;
+        return count;
     }
 
     public Integer mostCommon(Integer[] array) {
         return null;
+
     }
 }

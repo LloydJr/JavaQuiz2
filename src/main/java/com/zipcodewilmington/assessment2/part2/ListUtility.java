@@ -4,7 +4,9 @@ import com.j256.ormlite.stmt.query.In;
 import com.sun.xml.internal.ws.client.ClientSchemaValidationTube;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ListUtility {
     List<Integer> list;
@@ -24,16 +26,18 @@ public class ListUtility {
     }
 
     public List<Integer> getUnique() {
-        return null;
+//        return null;
+        Set<Integer> unique = new HashSet<>(list);
+        return new ArrayList<>(unique);
     }
 
     public String join() {
         return null;
+
     }
 
     public Integer mostCommon() {
 //        return null;
-        Integer[] intArr = list.toArray(new Integer[0]);
         return null;
     }
 
